@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: health-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: health-api
+  template:
+    metadata:
+      labels:
+        app: health-api
+    spec:
+      containers:
+      - name: health-api
+        image: health-api
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        env:
+          - name: APP_ENV
+            valueFrom:
+              configMapKeyRef:
+                name: health-config
+                key: APP_ENV
+          - name: LOG_LEVEL
+            valueFrom:
+              configMapKeyRef:
+                name: health-config
+                key: LOG_LVEL
+          - name: API_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: health-secret
+                key: API_TOKEN
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
