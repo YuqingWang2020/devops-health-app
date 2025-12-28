@@ -17,7 +17,11 @@ def root():
 
 @app.get("/health")
 def health():
-    return {"status":"healthy"}
+    return {
+        "status":"healthy",
+        "service": "health-api"
+    }
+
 
 @app.get("/crash")
 def crash():
