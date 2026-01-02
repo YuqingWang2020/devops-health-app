@@ -28,9 +28,8 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: health-config
-                key: LOG_LVEL
-          - name: API_TOKEN
-            valueFrom:
+                key: LOG_LEVEL
+          - name: API_TOKEN valueFrom:
               secretKeyRef:
                 name: health-secret
                 key: API_TOKEN
