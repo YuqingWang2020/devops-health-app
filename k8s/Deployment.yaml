@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: health-api
-        image: health-api
-        imagePullPolicy: IfNotPresent
+        image: yuqingwang2020/health-api:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:

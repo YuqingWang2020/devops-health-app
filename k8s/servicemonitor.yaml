@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: health-api
+  labels:
+    release: monitoring    # elm release 
+spec:
+  selector:
+    matchLabels:
+      app: health-api      # ← Service  label
+  endpoints:
+  - port: http             # ←  Service ports[].name
+    path: /metrics
+    interval: 15s
+

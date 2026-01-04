@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 WORKDIR /app
 COPY app.py /app
-RUN pip install fastapi uvicorn
+RUN pip install fastapi uvicorn prometheus_client
 EXPOSE 8080
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]
