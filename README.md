@@ -281,18 +281,7 @@ These commands cover the majority of real-world Kubernetes troubleshooting scena
 
 ---
 
-## 13. Possible Extensions
-
-This project can be extended with:
-
-* Ingress + TLS
-* Horizontal Pod Autoscaler (HPA)
-* Alerting rules in Prometheus
-* Multi-environment deployments (dev/staging/prod)
-
----
-
-## 14. Summary
+## 13. Summary
 
 This project demonstrates how a minimal application can be operated in a **production-oriented DevOps setup**.
 
