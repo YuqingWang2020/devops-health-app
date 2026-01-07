@@ -60,6 +60,25 @@ k3s Kubernetes Cluster
 
 ---
 
+**File Structure:**
+```
+devops-health-app/
+├── app.py
+├── Dockerfile
+├── env
+├── README.md
+├── k8s/
+      ├── Deployment.yaml
+      ├── service.yaml
+      ├── servicemonitor.yaml
+├── argocd/
+      ├── argocd-app.yaml
+└── .github/workflows
+      ├── ci.yaml
+```
+
+---
+
 ## 3. Application Behavior
 
 The application is intentionally minimal to clearly demonstrate operational behavior.
