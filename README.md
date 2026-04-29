@@ -307,5 +307,3 @@ The focus is not on application features, but on:
 * Automation
 * Observability
 * Operational correctness
-
-It reflects how I approach DevOps engineering in real-world environments.
