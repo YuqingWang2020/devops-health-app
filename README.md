@@ -273,7 +273,6 @@ This enables **end-to-end observability** from request behavior to infrastructur
 
 ## 11. Operational Verification
 
-Typical operational checks:
 
 ```bash
 kubectl get pods
@@ -282,8 +281,6 @@ kubectl logs <pod>
 kubectl get events
 kubectl exec -it <pod> -- sh
 ```
-
-These commands cover the majority of real-world Kubernetes troubleshooting scenarios.
 
 ---
 
