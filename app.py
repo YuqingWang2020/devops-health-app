@@ -40,7 +40,7 @@ def root():
 
 @app.get("/health")
 def health():
-    return {"status":"healthy","service":"health-api-demo1"}
+    return {"status":"healthy","service":"health-api-demo2"}
 
 @app.get("/crash")
 def crash():
