@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: health-api
-        image: yuqingwang2020/health-api:88a163234e0447bed19bc7aeedd3fb86d38ce4e8
+        image: yuqingwang2020/health-api:0fcd9af9ab7060dbc0fbabfdb7fd5931217a6b43
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
