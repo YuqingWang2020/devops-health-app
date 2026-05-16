@@ -24,20 +24,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/health-api:${{ github.sha }}
+          tags: 
             ${{ secrets.DOCKER_USERNAME }}/health-api:latest
-
-      #
-      - name: Update Deployment.yaml with new image tag
-        run: |
-          sed -i "s|image: .*health-api:.*|image: ${{ secrets.DOCKER_USERNAME }}/health-api:${{ github.sha }}|" \
-            k8s/Deployment.yaml
-
-      - name: Commit and push updated Deployment.yaml
-        run: |
-          git config user.email "ci-bot@github.com"
-          git config user.name "GitHub Actions"
-          git add k8s/Deployment.yaml
-          git commit -m "ci: update image tag to ${{ github.sha }}"
-          git push
